@@ -1,17 +1,28 @@
-//DO NOT USE
+'use strict'
 
 //Desktop and Tablet
 var tabButtons = document.querySelectorAll('.tabContainer .buttonContainer button')
 var tabPanels = document.querySelectorAll('.tabContainer .tabPanel')
 
 function showPanel (pIndex) {
-    
+
     tabPanels.forEach(function(node){
         node.style.display = 'none'
-    })
-    tabPanels[pIndex].style.display = 'block'
-}
+        tabPanels[pIndex].style.display = 'block'
+        if(tabButtons[pIndex].classList.contains('active')) {
+            
+            tabButtons[pIndex].classList.remove('active')
+        } else {
+            tabButtons[pIndex].classList.add('active')
+        }
+        
+        
+    });
 
+    
+    };
+
+    
 showPanel(0)
 
 
